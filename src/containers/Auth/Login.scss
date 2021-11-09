@@ -1,0 +1,43 @@
+.login-background{
+    background: rgb(34,193,195);
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
+    .login-container{
+        background-color:white;
+        border-radius: 25px;
+        width: 400px;
+        margin: 0 auto;
+        height: 100%;
+        .login-content{
+            padding: 12px;
+            .text-login{
+                font-size: x-large;
+                font-weight: 600;
+                padding-top: 15px;
+            }
+            .login-input{
+                padding: 6px;
+                .form-control{
+                    border-radius: 30px;
+                }
+            }
+            .login-btn{
+                text-align: center;
+                .btn-login{
+                    width: 80%;
+                    height: 35px;
+                    border-radius: 30px;
+                    font-size: 1.3rem;
+                    background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+                    color: beige;
+                    font-weight: 700;
+                }
+            }
+            .forgot-pass{
+                font-size: 12px;
+                padding: 5px 6px;
+                margin: 5px;
+            }
+        }
+    }
+}
