@@ -3,6 +3,8 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import '../System/usersManage.scss';
 import {getAllUsers} from '../../services/userService';
+import ModalUser from './ModalUser';
+import { Modal } from 'bootstrap';
 class UserManage extends Component {
 
     // state = {
@@ -23,15 +25,22 @@ class UserManage extends Component {
             })
         }
     }
-
+    handleAddNewUsers = () => {
+        alert('click me')
+    }
 
     render() {
-        console.log('check render', this.state)
         let arrUsers = this.state.arrUsers;
         return (
             <div className="users-container">
                 <div className = "title text-center">
                     Manage users with Quang 
+                </div>
+                <div className = "mx-1">
+                    <button
+                    className = "btn btn-primary px-3"
+                    onClick = {() => this.handleAddNewUsers()}
+                    ><i class="fas fa-plus"></i>Add New User</button>
                 </div>
                 <div className = "users-table mt-3 mx-2">
                 <table id="customers">
@@ -44,7 +53,6 @@ class UserManage extends Component {
                     </tr>
                         {
                             arrUsers && arrUsers.map((item, index) => {
-                                console.log('quang check map', item, index)
                             return (
                                 <tr>
                                     <td>{item.firstName}</td>
@@ -61,6 +69,7 @@ class UserManage extends Component {
                         }
                     </table>
                 </div>
+                <ModalUser/>
             </div>
         );
     }
