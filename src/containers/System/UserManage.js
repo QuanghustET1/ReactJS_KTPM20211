@@ -13,7 +13,8 @@ class UserManage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            arrUsers: []
+            arrUsers: [],
+            isOpenModalUser: false,
         }
     }
 
@@ -26,7 +27,14 @@ class UserManage extends Component {
         }
     }
     handleAddNewUsers = () => {
-        alert('click me')
+        this.setState({
+            isOpenModalUser: true,
+        })
+    }
+    toggleUserModal = () => {
+        this.setState({
+            isOpenModalUser: !this.state.isOpenModalUser,
+        })
     }
 
     render() {
@@ -69,7 +77,11 @@ class UserManage extends Component {
                         }
                     </table>
                 </div>
-                <ModalUser/>
+                <ModalUser
+                
+                isOpen = {this.state.isOpenModalUser}
+                toggleFromParent = {this.toggleUserModal}
+                />
             </div>
         );
     }

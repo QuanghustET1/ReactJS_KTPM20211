@@ -41,3 +41,35 @@ button.btn-delete {
     color: rgb(20, 56, 5) !important;
   } 
 }
+.Modal-user-container{
+  .modal-content{
+    .modal-header{
+      button{
+        background-color: transparent;
+        color: white;
+        border: none;
+        font-size: 25px;
+      }
+    }
+  }
+  .modal-user-body{
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    .input-container{
+      display: flex;
+      flex-direction: column;
+      width: 49%;
+      &.max-w{
+        width: 100%;
+      }
+      input{
+        border-radius: 17px;
+        height: 30px;
+        outline: none;
+        border: 1px solid grey;
+        padding: 0 8px;
+      }
+    }
+  }  
+}
