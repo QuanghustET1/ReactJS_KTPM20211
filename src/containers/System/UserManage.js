@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import '../System/usersManage.scss';
-import {getAllUsers} from '../../services/userService';
+import {getAllUsers, createNewUserService} from '../../services/userService';
 import ModalUser from './ModalUser';
 import { Modal } from 'bootstrap';
 class UserManage extends Component {
@@ -19,6 +19,9 @@ class UserManage extends Component {
     }
 
     async componentDidMount() {
+        await this.getAllUserFromReact();
+    }
+    getAllUserFromReact = async() => {
         let response = await getAllUsers('ALL');
         if(response && response.errCode === 0){
             this.setState({
@@ -36,6 +39,22 @@ class UserManage extends Component {
             isOpenModalUser: !this.state.isOpenModalUser,
         })
     }
+    createNewUser = async (data) => {
+        try {
+            let response = await createNewUserService(data);
+            if(response && response.errCode !== 0){
+                alert(response.errMessage);
+            }
+            else{
+                await this.getAllUserFromReact();
+                this.setState({
+                    isOpenModalUser: false
+                })
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
 
     render() {
         let arrUsers = this.state.arrUsers;
@@ -52,6 +71,7 @@ class UserManage extends Component {
                 </div>
                 <div className = "users-table mt-3 mx-2">
                 <table id="customers">
+                    <tbody>
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
@@ -68,19 +88,21 @@ class UserManage extends Component {
                                     <td>{item.email}</td>
                                     <td>{item.address}</td>
                                     <td>
-                                        <button class = "btn-edit"><i className="fas fa-pen-square"></i></button>
-                                        <button class  = "btn-delete"><i className="fas fa-trash-alt"></i></button>
+                                        <button className = "btn-edit"><i className="fas fa-pen-square"></i></button>
+                                        <button className  = "btn-delete"><i className="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
                             )
                             })
                         }
+                        </tbody>
                     </table>
                 </div>
                 <ModalUser
                 
                 isOpen = {this.state.isOpenModalUser}
                 toggleFromParent = {this.toggleUserModal}
+                createNewUser = {this.createNewUser}
                 />
             </div>
         );
