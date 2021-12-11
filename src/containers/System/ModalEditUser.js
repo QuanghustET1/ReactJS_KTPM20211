@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import {emitter} from "../../utils/emitter";
-class ModalUser extends Component {
+class ModalEditUser extends Component {
 
     constructor(props){
         super(props);
@@ -14,21 +14,7 @@ class ModalUser extends Component {
             lastName: '',
             address: '',
         }
-        this.listenToEmitter();
     }
-    listenToEmitter(){
-        emitter.on('EVENT_CLEAR_MODAL_DATA', () => {
-            this.setState({
-                email: '',
-                password: '',
-                firstName: '',
-                lastName: '',
-                address: '',
-            })
-        })
-    }
-
-
     componentDidMount() {
     }
     toggle = () =>{
@@ -69,7 +55,7 @@ class ModalUser extends Component {
             className = {'Modal-user-container'}
             size = "lg"
             >
-            <ModalHeader toggle = {()=>{this.toggle()}}>Create a New User</ModalHeader>
+            <ModalHeader toggle = {()=>{this.toggle()}}>Edit a User</ModalHeader>
             <ModalBody>
                 <div className = "modal-user-body">
                         <div className = "input-container">
@@ -129,4 +115,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalUser);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalEditUser);
