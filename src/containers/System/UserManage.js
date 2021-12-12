@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import '../System/usersManage.scss';
-import {getAllUsers, createNewUserService, deleteUserService} from '../../services/userService';
+import {getAllUsers, createNewUserService, deleteUserService, editUserService} from '../../services/userService';
 import ModalUser from './ModalUser';
 import { Modal } from 'bootstrap';
 import ModalEditUser from './ModalEditUser';
@@ -17,7 +17,8 @@ class UserManage extends Component {
         this.state = {
             arrUsers: [],
             isOpenModalUser: false,
-            isOpenEditUser: false
+            isOpenEditUser: false,
+            userEdit: {}
         }
     }
 
@@ -81,7 +82,24 @@ class UserManage extends Component {
         console.log('oke', user)
         this.setState({
             isOpenEditUser: true,
+            userEdit: user
         })
+    }
+    doEditUser = async(user) => {
+        try {
+            let res = await editUserService(user);
+            if(res && res.errCode === 0){
+                this.setState({
+                    isOpenEditUser: false
+                })
+                await this.getAllUserFromReact(); // refresh lại tất cả user 
+            }
+            else{
+                alert(res.errMessage);
+            }
+        } catch (e) {
+            console.log(e);
+        }
     }
 
 
@@ -133,11 +151,15 @@ class UserManage extends Component {
                 toggleFromParent = {this.toggleUserModal}
                 createNewUser = {this.createNewUser}
                 />
+                {this.state.isOpenEditUser &&
                 <ModalEditUser
                 isOpen = {this.state.isOpenEditUser}
                 toggleFromParent = {this.toggleEditUserModal}
+                currentUser = {this.state.userEdit}
+                EditUser = {this.doEditUser}
                 // createNewUser = {this.createNewUser}
                 />
+                }
             </div>
         );
     }
