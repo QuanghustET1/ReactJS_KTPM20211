@@ -1,7 +1,7 @@
 .home-header-container{
     height: 60px;
     width: 100%;
-    padding: 0 40px;
+    padding: 0 10px;
     .home-header-content{
         width: 100%;
         height: 100%;
@@ -56,7 +56,7 @@
                 &.active{
                     opacity: 1;
                     span{
-                        color: orange;
+                        color: rgb(255, 102, 0);
                     }
                 }
                 &:hover{
@@ -128,7 +128,8 @@
             }
         }
         .content-down{
-            height: 50%;
+            height: 35%;
+            padding-bottom: 10px; 
             display: flex;
             align-items: flex-end;
             justify-content: center;
