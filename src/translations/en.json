@@ -1,5 +1,5 @@
 {
-    "homeheader":{
+    "homeheader": {
         "speciality": "Medical speciality",
         "searchdoctor": "Find a doctor by speciality",
         "health-facility": "Health facilities",
@@ -10,7 +10,7 @@
         "check-health": "General health check",
         "support": "Support"
     },
-    "banner":{
+    "banner": {
         "title1": "MEDICAL BACKGROUND",
         "title2": "COMPREHENSIVE HEALTH CARE",
         "child1": "Specialized examination",
@@ -53,6 +53,7 @@
                 "header": "System Administrator",
                 "user-manage": "User manage",
                 "product-manage": "Package manage",
+                "user-redux": "Manage user redux",
                 "register-package-group-or-account": "Register service package for group/account"
             },
             "system-parameter": {
