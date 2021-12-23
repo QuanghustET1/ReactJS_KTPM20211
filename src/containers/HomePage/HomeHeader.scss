@@ -4,8 +4,13 @@
     padding: 0 10px;
     .home-header-content{
         width: 100%;
-        height: 100%;
+        height: auto;
         display: flex;
+        position: fixed;
+        top: 0px;
+        background-color: white;
+        padding: 0 20px;
+        z-index: 100;
         .left-container{
             width: 20%;
             display: flex;
@@ -81,7 +86,8 @@
     }
     .home-header-banner{
         background-image: url('../../assets/bookingcare-cover-4.jpg');
-        height: 485px;
+        height: 750px;
+        padding-top: 70px;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -89,8 +95,7 @@
         flex-direction: column;
         .content-up{
             background-image: linear-gradient(rgba(126,126,126,0.25), rgba(255,255,255,0.1));
-            padding-top: 15px;
-            height: 65%;
+            height: 600px;
             .title1{
                 text-align: center;
                 font-size: 30px;
