@@ -43,42 +43,40 @@ class UserRedux extends Component {
                 </div>
                 <div className="user-redux-body">
                     <div className="container">
-                        <div className="row">
+                        <div className="row" style={{display: "grid"}}>
                             <form>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                <div className="form-row">
+                                    <div className="form-group col-md-3">
                                         <label for="inputEmail4">Email</label>
-                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" />
+                                        <input type="email" className="form-control" id="inputEmail4" placeholder="Email" />
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div className="form-group col-md-3">
                                         <label for="inputPassword4">Password</label>
-                                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password" />
+                                        <input type="password" className="form-control" id="inputPassword4" placeholder="Password" />
                                     </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                    <div className="form-group col-md-3">
                                         <label for="inputAddress">First Name</label>
-                                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" />
+                                        <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" />
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div className="form-group col-md-3">
                                         <label for="inputAddress2">Last Name</label>
-                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Enter your first name" />
+                                        <input type="text" className="form-control" id="inputAddress2" placeholder="Enter your first name" />
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                <div className="form-row">
+                                    <div className="form-group col-md-3">
                                         <label for="inputCity">Phone Number</label>
-                                        <input type="text" class="form-control" id="phone number ..." />
+                                        <input type="text" className="form-control" id="phone number ..." />
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div className="form-group col-md-9">
                                         <label for="inputZip">Address</label>
-                                        <input type="text" class="form-control" id="Adress..." />
+                                        <input type="text" className="form-control" id="Adress..." />
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-4">
+                                <div className="form-row">
+                                    <div className="form-group col-md-3">
                                         <label for="inputState">Gender</label>
-                                        <select id="inputState" class="form-control">
+                                        <select id="inputState" className="form-control">
                                             {genders && genders.length > 0 &&
                                                 genders.map((item, index) => {
                                                     return (
@@ -86,19 +84,43 @@ class UserRedux extends Component {
                                                     )
                                                 })
                                             }
-                                            <option>...</option>
+                                            <option>Choose</option>
                                         </select>
                                     </div>
+                                    <div className="form-group col-md-3">
+                                        <label for="inputState">Position</label>
+                                        <select id="inputState" className="form-control">
+                                            {genders && genders.length > 0 &&
+                                                genders.map((item, index) => {
+                                                    return (
+                                                        <option key={index}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
+                                                    )
+                                                })
+                                            }
+                                            <option>Choose</option>
+                                        </select>
+                                    </div>
+                                    <div className="form-group col-md-3">
+                                        <label for="inputState">RoleID</label>
+                                        <select id="inputState" className="form-control">
+
+                                            <option>Choose</option>
+                                        </select>
+                                    </div>
+                                    <div className="form-group col-md-3">
+                                        <label>Image</label>
+                                        <input type="text" className="form-control" />
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck" />
-                                        <label class="form-check-label" for="gridCheck">
+                                {/* <div className="form-group">
+                                    <div className="form-check">
+                                        <input className="form-check-input" type="checkbox" id="gridCheck" />
+                                        <label className="form-check-label" for="gridCheck">
                                             Check me out
                                         </label>
                                     </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Sign in</button>
+                                </div> */}
+                                <button type="submit" className="btn btn-primary">Save</button>
                             </form>
                         </div>
                     </div>
