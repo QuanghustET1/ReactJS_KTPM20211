@@ -1,6 +1,7 @@
 import actionTypes from '../actions/actionTypes';
 
 const initialState = {
+    isLoadingGender: false,
     genders: [],
     roles: [],
     positions: []
@@ -24,6 +25,26 @@ const adminReducer = (state = initialState, action) => {
             console.log('fire fetch gender failed: ', action)
             return {
                 ...state,
+            }
+        case actionTypes.FETCH_POSITION_SUCCESS:
+            state.positions = action.data;
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_POSITION_FAIDED:
+            state.positions = [];
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_ROLES_SUCCESS:
+            state.roles = action.data;
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_ROLES_FAIDED:
+            state.roles = [];
+            return {
+                ...state
             }
         default:
             return state;
