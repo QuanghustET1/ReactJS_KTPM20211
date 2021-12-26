@@ -21,8 +21,8 @@ const adminReducer = (state = initialState, action) => {
             return {
                 ...copyState,
             }
-        case actionTypes.FETCH_GENDER_FAIDED:
-            console.log('fire fetch gender failed: ', action)
+        case actionTypes.FETCH_GENDER_FAILDED:
+            console.log('fire fetch gender FAILDED: ', action)
             return {
                 ...state,
             }
@@ -31,7 +31,7 @@ const adminReducer = (state = initialState, action) => {
             return {
                 ...state
             }
-        case actionTypes.FETCH_POSITION_FAIDED:
+        case actionTypes.FETCH_POSITION_FAILDED:
             state.positions = [];
             return {
                 ...state
@@ -41,7 +41,7 @@ const adminReducer = (state = initialState, action) => {
             return {
                 ...state
             }
-        case actionTypes.FETCH_ROLES_FAIDED:
+        case actionTypes.FETCH_ROLES_FAILDED:
             state.roles = [];
             return {
                 ...state

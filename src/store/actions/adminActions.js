@@ -1,5 +1,5 @@
 import actionTypes from "./actionTypes";
-import { getAllcodeService } from "../../services/userService";
+import { getAllcodeService, createNewUserService } from "../../services/userService";
 export const fetchGenderStart = () => {
     return async (dispatch, getState) => {
         try {
@@ -8,10 +8,10 @@ export const fetchGenderStart = () => {
             if (res && res.errCode === 0) {
                 dispatch(fetchGenderSuccess(res.data))
             } else {
-                dispatch(fetchGenderFailed())
+                dispatch(fetchGenderFAILDED())
             }
         } catch (e) {
-            dispatch(fetchGenderFailed());
+            dispatch(fetchGenderFAILDED());
             console.log('fetch gender error', e)
         }
     }
@@ -20,22 +20,22 @@ export const fetchGenderSuccess = (genderData) => ({
     type: actionTypes.FETCH_GENDER_SUCCESS,
     data: genderData
 })
-export const fetchGenderFailed = () => ({
-    type: actionTypes.FETCH_GENDER_FAIDED
+export const fetchGenderFAILDED = () => ({
+    type: actionTypes.FETCH_GENDER_FAILDED
 })
 export const fetchPositionSuccess = (positionData) => ({
     type: actionTypes.FETCH_POSITION_SUCCESS,
     data: positionData
 })
-export const fetchPositionFailed = () => ({
-    type: actionTypes.FETCH_GENDER_FAIDED
+export const fetchPositionFAILDED = () => ({
+    type: actionTypes.FETCH_GENDER_FAILDED
 })
 export const fetchRoleSuccess = (roleData) => ({
     type: actionTypes.FETCH_ROLES_SUCCESS,
     data: roleData
 })
-export const fetchRoleFailed = () => ({
-    type: actionTypes.FETCH_ROLES_FAIDED
+export const fetchRoleFAILDED = () => ({
+    type: actionTypes.FETCH_ROLES_FAILDED
 })
 export const fetchPositionStart = () => {
     return async (dispatch, getState) => {
@@ -44,11 +44,11 @@ export const fetchPositionStart = () => {
             if (res && res.errCode === 0) {
                 dispatch(fetchPositionSuccess(res.data))
             } else {
-                dispatch(fetchPositionFailed())
+                dispatch(fetchPositionFAILDED())
             }
         } catch (e) {
-            dispatch(fetchPositionFailed())
-            console.log('fetchPosition failed error: ', e)
+            dispatch(fetchPositionFAILDED())
+            console.log('fetchPosition FAILDED error: ', e)
         }
     }
 }
@@ -59,11 +59,27 @@ export const fetchRolesStart = () => {
             if (res && res.errCode === 0) {
                 dispatch(fetchRoleSuccess(res.data))
             } else {
-                dispatch(fetchRoleFailed())
+                dispatch(fetchRoleFAILDED())
             }
         } catch (e) {
-            dispatch(fetchRoleFailed())
-            console.log('fetchRoleFailed err: ', e)
+            dispatch(fetchRoleFAILDED())
+            console.log('fetchRoleFAILDED err: ', e)
+        }
+    }
+}
+export const createNewUser = (data) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await createNewUserService(data);
+            console.log('check create user redux: ', res);
+            // if (res && res.errCode === 0) {
+            //     dispatch(saveUserSuccess())
+            // } else {
+            //     dispatch(saveUserFailded())
+            // }
+        } catch (e) {
+            // dispatch(saveUserFailded())
+            console.log('save failded err: ', e)
         }
     }
 }
