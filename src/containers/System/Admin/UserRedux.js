@@ -6,7 +6,7 @@ import * as actions from "../../../store/actions";
 import './UserRedux.scss';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
-
+import './UserRedux.scss'
 
 class UserRedux extends Component {
 
