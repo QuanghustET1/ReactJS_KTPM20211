@@ -1,0 +1,26 @@
+
+.preview-img-container {
+    display: grid;
+    grid-template-columns: 42% 56%;
+    gap: 2%;
+    .label-upload {
+        padding: 5px;
+        border-radius: 3px;
+        background: #ddd;
+        height: 30px;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+    .preview-image {
+        border: 1px dotted black;
+        height: 100px;
+        background: center center;
+        background-size: contain;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
