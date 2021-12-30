@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { LANGUAGES, CRUD_ACTIONS } from '../../../utils';
+import { LANGUAGES, CRUD_ACTIONS, CommonUtils } from '../../../utils';
 import * as actions from "../../../store/actions";
 import './UserRedux.scss';
 import Lightbox from 'react-image-lightbox';
@@ -84,11 +84,13 @@ class UserRedux extends Component {
             })
         }
     }
-    handleOnchangeImage = (event) => {
+    handleOnchangeImage = async (event) => {
         let data = event.target.files;
         let file = data[0];
         if (file) {
+            let base64 = await CommonUtils.getBase64(file)
             let objectURL = URL.createObjectURL(file);
+            console.log("base64: ", base64)
             this.setState({
                 previewImgURL: objectURL,
                 avatar: file
@@ -109,7 +111,8 @@ class UserRedux extends Component {
                 phonenumber: this.state.phoneNumber,
                 gender: this.state.gender,
                 roleId: this.state.role,
-                positionId: this.state.position
+                positionId: this.state.position,
+                avatar: this.state.avatar
             })
         }
         if (action === CRUD_ACTIONS.EDIT) {
@@ -157,6 +160,11 @@ class UserRedux extends Component {
     }
 
     handleEditUserFromParentKey = (user) => {
+        let imageBase64 = '';
+        if (user.image) {
+            const imageBuffer = Buffer.from(JSON.stringify(user.image))
+            const imageBase64 = imageBuffer.toString('base64')
+        }
         this.setState({
             email: user.email,
             password: 'HARDCODE',
@@ -167,7 +175,7 @@ class UserRedux extends Component {
             gender: user.gender,
             role: user.roleId,
             position: user.positionId,
-            avatar: '',
+            avatar: imageBase64,
             action: CRUD_ACTIONS.EDIT,
             userEditId: user.id
         })
@@ -315,7 +323,7 @@ class UserRedux extends Component {
                                     className={this.state.action === CRUD_ACTIONS.EDIT ? "btn btn-warning" : "btn btn-primary"}
                                     onClick={() => { this.handleSaveUser() }}
                                 >
-                                    {this.state.action === CRUD_ACTIONS.EDIT ? <FormattedMessage id="manage-user.edit" /> : <FormattedMessage id="manage-user.save" />}
+                                    {this.state.action === CRUD_ACTIONS.EDIT ? "Edit" : "Save"}
                                 </button>
                                 <div className="col-12 mb-5">
                                     <TableManageUser
