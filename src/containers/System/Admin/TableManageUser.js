@@ -5,7 +5,7 @@ import './TableManageUser.scss';
 import * as actions from '../../../store/actions';
 
 
-class TableManage extends Component {
+class TableManageUser extends Component {
 
     constructor(props) {
         super(props);
@@ -29,6 +29,9 @@ class TableManage extends Component {
     handleDeleteUser = (user) => {
         this.props.deleteAUserRedux(user.id)
     }
+    handleEditUser = (user) => {
+        this.props.handleEditUserFromParentKey(user)
+    }
     render() {
         let arrUsers = this.state.usersRedux;
         return (
@@ -50,7 +53,7 @@ class TableManage extends Component {
                                     <td>{item.lastName}</td>
                                     <td>{item.address}</td>
                                     <td>
-                                        <button className="btn-edit"><i className="fas fa-pen-square"></i></button>
+                                        <button className="btn-edit" onClick={() => this.handleEditUser(item)}><i className="fas fa-pen-square"></i></button>
                                         <button className="btn-delete" onClick={() => this.handleDeleteUser(item)}><i className="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
@@ -77,4 +80,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TableManage);
+export default connect(mapStateToProps, mapDispatchToProps)(TableManageUser);

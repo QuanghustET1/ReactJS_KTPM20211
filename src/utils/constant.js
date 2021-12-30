@@ -10,7 +10,7 @@ export const LANGUAGES = {
     VI: 'vi',
     EN: 'en'
 };
- 
+
 export const manageActions = {
     ADD: "ADD",
     EDIT: "EDIT",
@@ -24,4 +24,10 @@ export const dateFormat = {
 export const YesNoObj = {
     YES: 'Y',
     NO: 'N'
+};
+export const CRUD_ACTIONS = {
+    CREATE: "CREATE",
+    EDIT: "EDIT",
+    DELETE: "DELETE",
+    READ: "READ"
 }
