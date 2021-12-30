@@ -311,4 +311,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserRedux);
+export default connect(mapStateToProps, mapDispatchToProps)(UserRedux); 
