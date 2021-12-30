@@ -27,7 +27,7 @@ class UserRedux extends Component {
             password: '',
             firstName: '',
             lastName: '',
-            phoneNumber: '',
+            phonenumber: '',
             address: '',
             gender: '',
             position: '',
@@ -74,7 +74,7 @@ class UserRedux extends Component {
                 password: '',
                 firstName: '',
                 lastName: '',
-                phoneNumber: '',
+                phonenumber: '',
                 address: '',
                 gender: arrGenders && arrGenders.length > 0 ? arrGenders[0] : '',
                 position: arrPositions && arrPositions.length > 0 ? arrPositions[0] : '',
@@ -108,7 +108,7 @@ class UserRedux extends Component {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 address: this.state.address,
-                phonenumber: this.state.phoneNumber,
+                phonenumber: this.state.phonenumber,
                 gender: this.state.gender,
                 roleId: this.state.role,
                 positionId: this.state.position,
@@ -123,17 +123,17 @@ class UserRedux extends Component {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 address: this.state.address,
-                phonenumber: this.state.phoneNumber,
+                phonenumber: this.state.phonenumber,
                 gender: this.state.gender,
                 roleId: this.state.role,
                 positionId: this.state.position
             })
         }
-
+        console.log(this.state)
     }
     checkValidateInput = () => {
         let isValid = true;
-        let arrCheck = ['email', 'password', 'firstName', 'lastName', 'phoneNumber', 'address']
+        let arrCheck = ['email', 'password', 'firstName', 'lastName', 'phonenumber', 'address']
         for (let i = 0; i < arrCheck.length; i++) {
             if (!this.state[arrCheck[i]]) {
                 isValid = false;
@@ -171,7 +171,7 @@ class UserRedux extends Component {
             firstName: user.firstName,
             lastName: user.lastName,
             address: user.address,
-            phonenumber: user.phoneNumber,
+            phonenumber: user.phonenumber,
             gender: user.gender,
             role: user.roleId,
             position: user.positionId,
@@ -189,7 +189,7 @@ class UserRedux extends Component {
         let roles = this.state.roleArr;
         let positions = this.state.positionArr;
         let isGenders = this.props.isLoadingGender;
-        let { email, password, firstName, lastName, phoneNumber, address, gender, position, role, avatar } = this.state;
+        let { email, password, firstName, lastName, phonenumber, address, gender, position, role, avatar } = this.state;
         return (
             <div className="users-redux-container">
                 <div className="title">
@@ -236,8 +236,8 @@ class UserRedux extends Component {
                                     <div className="form-group col-md-3">
                                         <label for="inputCity">Phone Number</label>
                                         <input type="text" className="form-control" id="phone number ..."
-                                            value={phoneNumber}
-                                            onChange={(event) => { this.onChangeInput(event, 'phoneNumber') }}
+                                            value={phonenumber}
+                                            onChange={(event) => { this.onChangeInput(event, 'phonenumber') }}
                                         />
                                     </div>
                                     <div className="form-group col-md-9">
