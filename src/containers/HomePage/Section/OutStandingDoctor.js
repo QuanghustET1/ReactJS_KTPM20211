@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './OutStandingDoctor.scss';
 import * as actions from "../../../store/actions";
-// import { FormattedMessage } from 'react-intl';
+import { withRouter } from 'react-router';
 
 
 import Slider from "react-slick";
@@ -26,7 +26,10 @@ class OutStandingDoctor extends Component {
     componentDidMount() {
         this.props.loadTopDoctors();
     }
-
+    handleViewDoctor = (doctor) => {
+        console.log('ok: ', doctor)
+        this.props.history.push(`/detail-doctor/${doctor.id}`);
+    }
 
     render() {
         let arrDoctors = this.state.arrDoctors;
@@ -53,7 +56,7 @@ class OutStandingDoctor extends Component {
                                 }
                                 let name = `${item.positionData.valueVi}, ${item.firstName} ${item.lastName}`;
                                 return (
-                                    <div className="section-customize section-outstanding-doctor" key={index}>
+                                    <div className="section-customize section-outstanding-doctor" key={index} onClick={() => this.handleViewDoctor(item)}>
                                         <div className="bg-image section-outstanding-doctor" />
                                         <div className="bg-content text-center">
                                             <div>{name}</div>
@@ -85,4 +88,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OutStandingDoctor);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OutStandingDoctor));
