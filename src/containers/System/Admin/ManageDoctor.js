@@ -18,11 +18,7 @@ import 'react-markdown-editor-lite/lib/index.css';
 // Finish!
 import Select from 'react-select';
 
-const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-];
+
 const mdParser = new MarkdownIt(/* Markdown-it options */);
 
 
@@ -34,20 +30,35 @@ class ManageDoctor extends Component {
             contentMarkdown: '',
             contentHTML: '',
             selectedDoctor: '',
-            description: ''
+            description: '',
+            listDoctors: []
         }
     }
 
     componentDidMount() {
-        // this.props.fetchUserRedux();
+        this.props.fetchAllDoctors();
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        // if (prevProps.listUsers !== this.props.listUsers) {
-        //     this.setState({
-        //         usersRedux: this.props.listUsers
-        //     })
-        // }
+        if (prevProps.allDoctors !== this.props.allDoctors) {
+            let dataSelect = this.buidDataInputSelect(this.props.allDoctors)
+            this.setState({
+                listDoctors: dataSelect
+            })
+        }
+    }
+    buidDataInputSelect = (inputData) => {
+        let result = []
+        if (inputData && inputData.length > 0) {
+            inputData.map((item, index) => {
+                let object = {};
+                let label = `${item.lastName} ${item.firstName}`;
+                object.label = label;
+                object.value = item.id;
+                result.push(object);
+            })
+        }
+        return result
     }
 
     handleEditorChange = ({ html, text }) => {
@@ -58,7 +69,12 @@ class ManageDoctor extends Component {
     }
 
     handleSaveContentMarkdown = () => {
-        console.log("quang check state: ", this.state)
+        this.props.saveDetailDoctor({
+            contentHTML: this.state.contentHTML,
+            contentMarkdown: this.state.contentMarkdown,
+            description: this.state.description,
+            doctorId: this.state.selectedDoctor.value
+        })
     }
 
     handleChange = (selectedDoctor) => {
@@ -83,7 +99,7 @@ class ManageDoctor extends Component {
                         <Select
                             value={this.state.selectedDoctor}
                             onChange={this.handleChange}
-                            options={options}
+                            options={this.state.listDoctors}
                         />
                     </div>
                     <div className="content-right">
@@ -109,14 +125,15 @@ class ManageDoctor extends Component {
 
 const mapStateToProps = state => {
     return {
-        listUsers: state.admin.users
+        allDoctors: state.admin.allDoctors
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchUserRedux: () => dispatch(actions.fetchAllUsersStart()),
-        deleteAUserRedux: (id) => dispatch(actions.deleteAUser(id))
+
+        fetchAllDoctors: (id) => dispatch(actions.fetchAllDoctors(id)),
+        saveDetailDoctor: (data) => dispatch(actions.saveDetailDoctor(data))
     };
 };
 
