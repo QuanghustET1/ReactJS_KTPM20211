@@ -38,5 +38,11 @@
         "doctor": {
             "manage-schedule": "Manage Doctor's schedule"
         }
+    },
+    "manage-schedule": {
+        "title": "Manage Doctor's examination plan",
+        "choose-doctor": "Choose Doctor",
+        "choose-date": "Choose Date",
+        "save": "Save Infor"
     }
 }
