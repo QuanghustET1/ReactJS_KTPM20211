@@ -4,6 +4,7 @@ import HomeHeader from '../../HomeHeader'
 import './DetailDoctor.scss';
 import { getDetailInforDoctor } from '../../../../services/userService';
 import DoctorSchedule from './DoctorSchedule';
+import DoctorEtraInfor from './DoctorEtraInfor';
 class DetailDoctor extends Component {
     constructor(props) {
         super(props);
@@ -69,7 +70,7 @@ class DetailDoctor extends Component {
                             />
                         </div>
                         <div className="content-right">
-
+                            <DoctorEtraInfor doctorIdFromParent={this.state.currentDoctorId} />
                         </div>
                     </div>
                     <div className="detail-infor-doctor">
