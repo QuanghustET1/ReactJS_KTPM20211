@@ -36,7 +36,7 @@ class OutStandingDoctor extends Component {
         let arrDoctors = this.state.arrDoctors;
         let settings = {
             dots: false,
-            infinite: true,
+            infinite: false,
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 1
@@ -52,9 +52,10 @@ class OutStandingDoctor extends Component {
                     <div className="section-body">
                         <Slider {...this.props.settings}>
                             {arrDoctors && arrDoctors.length > 0 && arrDoctors.map((item, index) => {
-                                if (index == 0) {
-                                    console.log(item)
-                                }
+                                // if (index == 0) {
+                                //     console.log(item)
+                                // }
+                                console.log(item)
                                 let name = `${item.positionData.valueVi}, ${item.firstName} ${item.lastName}`;
                                 return (
                                     <div className="section-customize section-outstanding-doctor" key={index} onClick={() => this.handleViewDoctor(item)}>

@@ -164,7 +164,7 @@ class ManageDoctor extends Component {
                     return item && item.value === paymentId;
                 })
                 selectedPrice = listPrice.find(item => {
-                    return item && item.value === provinceId;
+                    return item && item.value === priceId;
                 })
                 selectedProvince = listProvince.find(item => {
                     return item && item.value === provinceId;
