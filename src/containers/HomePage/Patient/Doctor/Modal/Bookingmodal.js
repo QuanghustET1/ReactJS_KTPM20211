@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { FormattedMessage } from 'react-intl';
 import './Bookingmodal.scss';
 import { Modal } from "reactstrap";
-
+import ProfileDoctor from '../ProfileDoctor';
+import _ from 'lodash';
 
 class Bookingmodal extends Component {
     constructor(props) {
@@ -22,7 +23,11 @@ class Bookingmodal extends Component {
     }
     render() {
 
-        let { isOpenModal, closeBookingclose, dateTime } = this.props;
+        let { isOpenModal, closeBookingclose, dataTime } = this.props;
+        let doctorId = '';
+        if (dataTime && !_.isEmpty(dataTime)) {
+            doctorId = dataTime.doctorId;
+        }
         return (
             <Modal isOpen={isOpenModal} className={'booking-modal-container'} size="lg" centered>
                 <div className="booking-modal-content">
@@ -32,10 +37,7 @@ class Bookingmodal extends Component {
                     </div>
                     <div className="booking-modal-body">
                         <div className="doctor-infor">
-
-                        </div>
-                        <div className="price">
-                            Giá khám 500.000 VNĐ
+                            <ProfileDoctor doctorId={doctorId} />
                         </div>
                         <div className="row">
                             <div className="col-6 form-group">
