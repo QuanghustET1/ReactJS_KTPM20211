@@ -34,6 +34,45 @@
             "manage-specialty": "Manage Specialties",
             "handbook": "Handbook",
             "manage-handbook": "Manage handbook"
+        },
+        "doctor": {
+            "manage-schedule": "Manage Doctor's schedule"
+        }
+    },
+    "manage-schedule": {
+        "title": "Manage Doctor's examination plan",
+        "choose-doctor": "Choose Doctor",
+        "choose-date": "Choose Date",
+        "save": "Save Infor"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule": "Schedule",
+            "no-schedule": "The doctor does not have an appointment during this time!",
+            "choose": "Choose",
+            "book-free": "and book free"
+        },
+        "extra-doctor-infor": {
+            "address": "Address",
+            "price": "Price",
+            "detail": "See detail",
+            "payment": "Payment",
+            "hide-price": "Hide price"
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Add new infor Doctor",
+            "select-doctor": "Choose doctor",
+            "intro": "Information Intro",
+            "add": "Create infor",
+            "save": "Save Infor",
+            "price": "Price",
+            "payment": "Payment",
+            "province": "Province",
+            "nameClinic": "Name Clinic",
+            "addressClinic": "Clinic's Address",
+            "note": "Note"
         }
     }
 }

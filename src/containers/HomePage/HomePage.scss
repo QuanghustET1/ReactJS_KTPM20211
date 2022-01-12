@@ -32,6 +32,9 @@
 }
 // Section Specialty 
 
+.slick-disabled{
+    display: none !important;
+}
 
 // Section Outstanding Doctor
 
@@ -89,6 +92,7 @@
                 &.section-outstanding-doctor {
                     border: 1px solid red;
                     width: 250px !important;
+                    cursor: pointer;
                 }
                 .bg-image{
                     width: 278px;
