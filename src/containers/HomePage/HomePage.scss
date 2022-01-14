@@ -90,7 +90,7 @@
             margin-left: 40px;
             .section-customize{
                 &.section-outstanding-doctor {
-                    border: 1px solid red;
+                    border: 1px solid #eee;
                     width: 250px !important;
                     cursor: pointer;
                 }
@@ -107,11 +107,11 @@
                     }
 
                     &.section-outstanding-doctor {
-                        background-image: url('../../assets/outstanding-doctor/avatar.jpg');
+                        // background-image: url('../../assets/outstanding-doctor/avatar.jpg');
                         margin: 0 auto;
                         width: 120px;
                         height: 120px;
-                        border: 1px solid red;
+                        border-radius: 50%;
                     }
                     &.section-handbook {
                         background-image: url('../../assets/handbook/avatar.jpg');

@@ -47,7 +47,7 @@ class DetailDoctor extends Component {
                     <div className="intro-doctor">
                         <div
                             className="content-left"
-                            style={{ backgroundImage: `url(https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Fdoctruyenfull.net%2Fdoc-truyen%2Fsuu-tam-anh-my-amor%2Favatar-couple-dong-vat-652353306.html&psig=AOvVaw0Qjhn8nrxBdJ-O3Kz67lWZ&ust=1641458978476000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKClsrGdmvUCFQAAAAAdAAAAABAE)` }}
+                            style={{ backgroundImage: `url(${detailDoctor && detailDoctor.image ? detailDoctor.image : ''})` }}
                         >
                         </div>
                         <div className="content-right">

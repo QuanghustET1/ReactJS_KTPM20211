@@ -53,14 +53,17 @@ class OutStandingDoctor extends Component {
                     <div className="section-body">
                         <Slider {...this.props.settings}>
                             {arrDoctors && arrDoctors.length > 0 && arrDoctors.map((item, index) => {
-                                // if (index == 0) {
-                                //     console.log(item)
-                                // }
-                                console.log(item)
+                                let imageBase64 = '';
+                                if (item.image) {
+                                    imageBase64 = new Buffer(item.image, 'base64').toString('binary');
+                                }
+
+
+
                                 let name = `${item.positionData.valueVi}, ${item.firstName} ${item.lastName}`;
                                 return (
                                     <div className="section-customize section-outstanding-doctor" key={index} onClick={() => this.handleViewDoctor(item)}>
-                                        <div className="bg-image section-outstanding-doctor" />
+                                        <div className="bg-image section-outstanding-doctor" style={{ backgroundImage: `url(${imageBase64})` }} />
                                         <div className="bg-content text-center">
                                             <div>{name}</div>
                                             <div>General</div>

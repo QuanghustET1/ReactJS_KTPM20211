@@ -80,7 +80,8 @@ class UserRedux extends Component {
                 position: arrPositions && arrPositions.length > 0 ? arrPositions[0] : '',
                 role: arrRoles && arrRoles.length > 0 ? arrRoles[0] : '',
                 avatar: '',
-                action: CRUD_ACTIONS.CREATE
+                action: CRUD_ACTIONS.CREATE,
+                previewImgURL: ''
             })
         }
     }
@@ -93,7 +94,7 @@ class UserRedux extends Component {
             console.log("base64: ", base64)
             this.setState({
                 previewImgURL: objectURL,
-                avatar: file
+                avatar: base64
             })
         }
     }
@@ -127,7 +128,8 @@ class UserRedux extends Component {
                 phonenumber: this.state.phoneNumber,
                 gender: this.state.gender,
                 roleId: this.state.role,
-                positionId: this.state.position
+                positionId: this.state.position,
+                avatar: this.state.avatar
             })
         }
 
@@ -163,8 +165,9 @@ class UserRedux extends Component {
     handleEditUserFromParentKey = (user) => {
         let imageBase64 = '';
         if (user.image) {
-            const imageBuffer = Buffer.from(JSON.stringify(user.image))
-            const imageBase64 = imageBuffer.toString('base64')
+            // const imageBuffer = Buffer.from(JSON.stringify(user.image))
+            // imageBase64 = imageBuffer.toString('base64')
+            imageBase64 = new Buffer(user.image, 'base64').toString('binary');
         }
         this.setState({
             email: user.email,
@@ -178,7 +181,8 @@ class UserRedux extends Component {
             position: user.positionId,
             avatar: imageBase64,
             action: CRUD_ACTIONS.EDIT,
-            userEditId: user.id
+            userEditId: user.id,
+            previewImgURL: imageBase64
         })
     }
 
@@ -199,130 +203,130 @@ class UserRedux extends Component {
                 <div className="user-redux-body">
                     <div className="container">
                         <div className="row" style={{ display: "grid" }}>
-                                <div className="form-row">
-                                    <div className="col-12">{isGenders === true ? 'loading genders' : ''}</div>
-                                    <div className="form-group col-md-3">
-                                        <label htmlFor="inputEmail4">Email</label>
-                                        <input type="email" className="form-control" id="inputEmail4" placeholder="Email"
-                                            value={email}
-                                            onChange={(event) => { this.onChangeInput(event, 'email') }}
-                                            disabled={this.state.action === CRUD_ACTIONS.EDIT ? true : false}
-                                        />
-                                    </div>
-                                    <div className="form-group col-md-3">
-                                        <label htmlFor="inputPassword4">Password</label>
-                                        <input type="password" className="form-control" id="inputPassword4" placeholder="Password"
-                                            value={password}
-                                            onChange={(event) => { this.onChangeInput(event, 'password') }}
-                                            disabled={this.state.action === CRUD_ACTIONS.EDIT ? true : false}
-                                        />
-                                    </div>
-                                    <div className="form-group col-md-3">
-                                        <label htmlFor="inputAddress">First Name</label>
-                                        <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St"
-                                            value={firstName}
-                                            onChange={(event) => { this.onChangeInput(event, 'firstName') }}
-                                        />
-                                    </div>
-                                    <div className="form-group col-md-3">
-                                        <label htmlFor="inputAddress2">Last Name</label>
-                                        <input type="text" className="form-control" id="inputAddress2" placeholder="Enter your first name"
-                                            value={lastName}
-                                            onChange={(event) => { this.onChangeInput(event, 'lastName') }}
-                                        />
-                                    </div>
+                            <div className="form-row">
+                                <div className="col-12">{isGenders === true ? 'loading genders' : ''}</div>
+                                <div className="form-group col-md-3">
+                                    <label htmlFor="inputEmail4">Email</label>
+                                    <input type="email" className="form-control" id="inputEmail4" placeholder="Email"
+                                        value={email}
+                                        onChange={(event) => { this.onChangeInput(event, 'email') }}
+                                        disabled={this.state.action === CRUD_ACTIONS.EDIT ? true : false}
+                                    />
                                 </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-3">
-                                        <label htmlFor="inputCity">Phone Number</label>
-                                        <input type="text" className="form-control" id="phone number ..."
-                                            value={phoneNumber}
-                                            onChange={(event) => { this.onChangeInput(event, 'phoneNumber') }}
-                                        />
-                                    </div>
-                                    <div className="form-group col-md-9">
-                                        <label htmlFor="inputZip">Address</label>
-                                        <input type="text" className="form-control" id="Adress..."
-                                            value={address}
-                                            onChange={(event) => { this.onChangeInput(event, 'address') }}
-                                        />
-                                    </div>
+                                <div className="form-group col-md-3">
+                                    <label htmlFor="inputPassword4">Password</label>
+                                    <input type="password" className="form-control" id="inputPassword4" placeholder="Password"
+                                        value={password}
+                                        onChange={(event) => { this.onChangeInput(event, 'password') }}
+                                        disabled={this.state.action === CRUD_ACTIONS.EDIT ? true : false}
+                                    />
                                 </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-3">
-                                        <label htmlFor="inputState">Gender</label>
-                                        <select id="inputState" className="form-control"
-                                            onChange={(event) => { this.onChangeInput(event, 'gender') }}
-                                            value={gender}
-                                        >
-                                            {genders && genders.length > 0 &&
-                                                genders.map((item, index) => {
-                                                    return (
-                                                        <option key={index} value={item.keyMap}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
-                                                    )
-                                                })
-                                            }
-                                            <option>Choose</option>
-                                        </select>
-                                    </div>
-                                    <div className="form-group col-md-3">
-                                        <label htmlFor="inputState">Position</label>
-                                        <select id="inputState" className="form-control"
-                                            onChange={(event) => { this.onChangeInput(event, 'position') }}
-                                            value={position}
-                                        >
-                                            {positions && positions.length > 0 &&
-                                                positions.map((item, index) => {
-                                                    return (
-                                                        <option key={index} value={item.keyMap}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
-                                                    )
-                                                })
-                                            }
-                                            <option>Choose</option>
-                                        </select>
-                                    </div>
-                                    <div className="form-group col-md-3">
-                                        <label htmlFor="inputState">RoleID</label>
-                                        <select id="inputState" className="form-control"
-                                            onChange={(event) => { this.onChangeInput(event, 'role') }}
-                                            value={role}
-                                        >
-                                            {roles && roles.length > 0 &&
-                                                roles.map((item, index) => {
-                                                    return (
-                                                        <option key={index} value={item.keyMap}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
-                                                    )
-                                                })
-                                            }
-                                            <option>Choose</option>
-                                        </select>
-                                    </div>
-                                    <div className="form-group col-md-3">
-                                        <label>Image</label>
-                                        <div className="preview-img-container">
-                                            <input id="previewImg" type="file" hidden
-                                                onChange={(event) => { this.handleOnchangeImage(event) }}
-                                            />
-                                            <label className="label-upload" htmlFor="previewImg">Upload Image<i className="fas fa-upload"></i></label>
-                                            <div className="preview-image"
-                                                style={{ backgroundImage: `url(${this.state.previewImgURL})` }}
-                                                onClick={() => this.openPreviewImage()}>
-                                            </div>
+                                <div className="form-group col-md-3">
+                                    <label htmlFor="inputAddress">First Name</label>
+                                    <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St"
+                                        value={firstName}
+                                        onChange={(event) => { this.onChangeInput(event, 'firstName') }}
+                                    />
+                                </div>
+                                <div className="form-group col-md-3">
+                                    <label htmlFor="inputAddress2">Last Name</label>
+                                    <input type="text" className="form-control" id="inputAddress2" placeholder="Enter your first name"
+                                        value={lastName}
+                                        onChange={(event) => { this.onChangeInput(event, 'lastName') }}
+                                    />
+                                </div>
+                            </div>
+                            <div className="form-row">
+                                <div className="form-group col-md-3">
+                                    <label htmlFor="inputCity">Phone Number</label>
+                                    <input type="text" className="form-control" id="phone number ..."
+                                        value={phoneNumber}
+                                        onChange={(event) => { this.onChangeInput(event, 'phoneNumber') }}
+                                    />
+                                </div>
+                                <div className="form-group col-md-9">
+                                    <label htmlFor="inputZip">Address</label>
+                                    <input type="text" className="form-control" id="Adress..."
+                                        value={address}
+                                        onChange={(event) => { this.onChangeInput(event, 'address') }}
+                                    />
+                                </div>
+                            </div>
+                            <div className="form-row">
+                                <div className="form-group col-md-3">
+                                    <label htmlFor="inputState">Gender</label>
+                                    <select id="inputState" className="form-control"
+                                        onChange={(event) => { this.onChangeInput(event, 'gender') }}
+                                        value={gender}
+                                    >
+                                        {genders && genders.length > 0 &&
+                                            genders.map((item, index) => {
+                                                return (
+                                                    <option key={index} value={item.keyMap}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
+                                                )
+                                            })
+                                        }
+                                        <option>Choose</option>
+                                    </select>
+                                </div>
+                                <div className="form-group col-md-3">
+                                    <label htmlFor="inputState">Position</label>
+                                    <select id="inputState" className="form-control"
+                                        onChange={(event) => { this.onChangeInput(event, 'position') }}
+                                        value={position}
+                                    >
+                                        {positions && positions.length > 0 &&
+                                            positions.map((item, index) => {
+                                                return (
+                                                    <option key={index} value={item.keyMap}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
+                                                )
+                                            })
+                                        }
+                                        <option>Choose</option>
+                                    </select>
+                                </div>
+                                <div className="form-group col-md-3">
+                                    <label htmlFor="inputState">RoleID</label>
+                                    <select id="inputState" className="form-control"
+                                        onChange={(event) => { this.onChangeInput(event, 'role') }}
+                                        value={role}
+                                    >
+                                        {roles && roles.length > 0 &&
+                                            roles.map((item, index) => {
+                                                return (
+                                                    <option key={index} value={item.keyMap}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
+                                                )
+                                            })
+                                        }
+                                        <option>Choose</option>
+                                    </select>
+                                </div>
+                                <div className="form-group col-md-3">
+                                    <label>Image</label>
+                                    <div className="preview-img-container">
+                                        <input id="previewImg" type="file" hidden
+                                            onChange={(event) => { this.handleOnchangeImage(event) }}
+                                        />
+                                        <label className="label-upload" htmlFor="previewImg">Upload Image<i className="fas fa-upload"></i></label>
+                                        <div className="preview-image"
+                                            style={{ backgroundImage: `url(${this.state.previewImgURL})` }}
+                                            onClick={() => this.openPreviewImage()}>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit"
-                                    className={this.state.action === CRUD_ACTIONS.EDIT ? "btn btn-warning save" : "btn btn-primary save"}
-                                    onClick={() => { this.handleSaveUser() }}
-                                >
-                                    {this.state.action === CRUD_ACTIONS.EDIT ? "Edit" : "Save"}
-                                </button>
-                                <div className="col-12 mb-5">
-                                    <TableManageUser
-                                        handleEditUserFromParentKey={this.handleEditUserFromParentKey}
-                                        action={this.state.action}
-                                    />
-                                </div>
+                            </div>
+                            <button type="submit"
+                                className={this.state.action === CRUD_ACTIONS.EDIT ? "btn btn-warning save" : "btn btn-primary save"}
+                                onClick={() => { this.handleSaveUser() }}
+                            >
+                                {this.state.action === CRUD_ACTIONS.EDIT ? "Edit" : "Save"}
+                            </button>
+                            <div className="col-12 mb-5">
+                                <TableManageUser
+                                    handleEditUserFromParentKey={this.handleEditUserFromParentKey}
+                                    action={this.state.action}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
