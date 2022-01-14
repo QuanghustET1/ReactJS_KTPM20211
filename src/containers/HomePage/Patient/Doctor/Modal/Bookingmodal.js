@@ -127,7 +127,7 @@ class Bookingmodal extends Component {
                                 <input className="form-control" value={this.state.fullName} onChange={(event) => this.handleOnChangeInput(event, 'fullName')} />
                             </div>
                             <div className="col-6 form-group">
-                                <label><FormattedMessage id="patient.booking-modal.phonenummber" /></label>
+                                <label><FormattedMessage id="patient.booking-modal.phonenumber" /></label>
                                 <input className="form-control" value={this.state.phoneNumber} onChange={(event) => this.handleOnChangeInput(event, 'phoneNumber')} />
                             </div>
                             <div className="col-6 form-group">
