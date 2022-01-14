@@ -23,7 +23,7 @@ class HomeHeader extends Component {
                 <div className="home-header-container">
                     <div className="home-header-content">
                         <div className="left-container">
-                            <i class="fas fa-bars"></i>
+                            <i className="fas fa-bars"></i>
                             <img className="header-logo" src={logo} onClick={() => this.returnToHome()} />
                         </div>
                         <div className="center-content">
@@ -45,7 +45,7 @@ class HomeHeader extends Component {
                             </div>
                         </div>
                         <div className="right-content">
-                            <div className="support"><i class="fas fa-phone-square"></i>
+                            <div className="support"><i className="fas fa-phone-square"></i>
                                 <FormattedMessage id="homeheader.support" />
                             </div>
                             <div className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'}><span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VN</span></div>
@@ -58,7 +58,7 @@ class HomeHeader extends Component {
                                 <div className="title1"><FormattedMessage id="banner.title1" /></div>
                                 <div className="title2"><FormattedMessage id="banner.title2" /></div>
                                 <div className="search">
-                                    <i class="fas fa-search"></i>
+                                    <i className="fas fa-search"></i>
                                     <input type="text" placeholder="Tìm chuyên khoa" />
                                 </div>
                             </div>
