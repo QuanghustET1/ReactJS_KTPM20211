@@ -34,6 +34,7 @@ class OutStandingDoctor extends Component {
 
     render() {
         let arrDoctors = this.state.arrDoctors;
+        console.log("arrdoctors:", arrDoctors);
         let settings = {
             dots: false,
             infinite: false,
