@@ -39,6 +39,11 @@
             "manage-schedule": "Quản lý kế hoạch khám bệnh"
         }
     },
+    "homepage": {
+        "outstanding-doctor": "Bác sĩ nổi bật tuần",
+        "more": "Xem thêm",
+        "specialty-popular": "Chuyên khoa phổ biến"
+    },
     "manage-schedule": {
         "title": "Quản lý kế hoạch khám bệnh của bác sĩ",
         "choose-doctor": "Chọn bác sĩ",

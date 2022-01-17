@@ -45,6 +45,11 @@
         "choose-date": "Choose Date",
         "save": "Save Infor"
     },
+    "homepage": {
+        "outstanding-doctor": "Last week's featured doctor",
+        "more": "More",
+        "specialty-popular": "Popular Specialty"
+    },
     "patient": {
         "detail-doctor": {
             "schedule": "Schedule",
