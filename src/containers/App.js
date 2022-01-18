@@ -6,6 +6,7 @@ import { history } from '../redux'
 import { ToastContainer } from 'react-toastify';
 import HomePage from './HomePage/HomePage.js';
 import Doctor from '../routes/Doctor';
+import DetailSpecialty from './HomePage/Patient/Specialty/DetailSpecialty';
 
 
 import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authentication';
@@ -63,6 +64,7 @@ class App extends Component {
                                     <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
                                     <Route path={'/doctor/'} component={userIsAuthenticated(Doctor)} />
                                     <Route path={path.VERIFY_EMAIL_BOOKING} component={VerifyEmail} />
+                                    <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
                                 </Switch>
                             </CustomScrollbars>
                         </div>
