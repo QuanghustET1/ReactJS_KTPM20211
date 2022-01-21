@@ -62,4 +62,7 @@ const getAllSpecialty = () => {
 const getDetailSpecialtyById = (data) => {
     return axios.get(`/api/get-detail-specialty-by-id?id=${data.id}&location=${data.location}`)
 }
-export { handleLoginApi, getAllUsers, createNewUserService, deleteUserService, editUserService, getAllcodeService, getTopDoctorHomeService, getAllDoctors, saveDetailDoctorService, getDetailInforDoctor, saveBulkScheduleDoctor, getScheduleDoctorByDate, getEtraInforDoctorById, getProfileDoctorById, postPatientBookAppointment, postVerifyBookAppointment, createNewSpecialty, getAllSpecialty, getDetailSpecialtyById };
+const getAllPatientForDoctor = (data) => {
+    return axios.get(`/api/get-list-patient-by-doctor?doctorId=${data.doctorId}&date=${data.date}`)
+}
+export { handleLoginApi, getAllUsers, createNewUserService, deleteUserService, editUserService, getAllcodeService, getTopDoctorHomeService, getAllDoctors, saveDetailDoctorService, getDetailInforDoctor, saveBulkScheduleDoctor, getScheduleDoctorByDate, getEtraInforDoctorById, getProfileDoctorById, postPatientBookAppointment, postVerifyBookAppointment, createNewSpecialty, getAllSpecialty, getDetailSpecialtyById, getAllPatientForDoctor };
