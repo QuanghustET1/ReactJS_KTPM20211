@@ -16,6 +16,11 @@ class HomeHeader extends Component {
             this.props.history.push(`/home`);
         }
     }
+    handleLoginPage = () => {
+        if (this.props.history) {
+            this.props.history.push(`/login`)
+        }
+    }
     render() {
         let language = this.props.language;
         return (
@@ -23,7 +28,7 @@ class HomeHeader extends Component {
                 <div className="home-header-container">
                     <div className="home-header-content">
                         <div className="left-container">
-                            <i className="fas fa-bars"></i>
+                            <i className="fas fa-bars" onClick={() => this.handleLoginPage()}></i>
                             <img className="header-logo" src={logo} onClick={() => this.returnToHome()} />
                         </div>
                         <div className="center-content">
