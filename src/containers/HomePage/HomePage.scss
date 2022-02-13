@@ -1,13 +1,13 @@
 // Slick
 .slick-prev{
-    left: -10px !important;
-    top: 45% !important;
+    left: -2px !important;
+    top: 100px !important;
     z-index: 99 !important;
-    height: 48px !important;
+    height: 44px !important;
     width: 44px !important;
     background: #fff !important;
     border: 2px solid #d7d7d7 !important;
-
+    border-radius: 50%;
     &:hover{
         background: #eceaea !important;
     }
@@ -15,17 +15,17 @@
 .slick-prev:before,
 .slick-next:before{
     font-family: FontAwesome !important;
-    color: red !important;
+    color: #1977cc !important;
 }
 .slick-next{
-    right: 40px !important;
+    right: 8px !important;
     z-index: 99 !important;
-    top: 45% !important; //khong duoc sua
-    height: 48px !important;
+    top: 100px !important; //khong duoc sua
+    height: 44px !important;
     width: 44px !important;
     background: #fff !important;
     border: 2px solid #d7d7d7 !important;
-
+    border-radius: 50%;
     &:hover{
         background: #eceaea !important;
     }
@@ -48,7 +48,7 @@
         // border: 1px solid red;
     }
     &.section-outstanding-doctor{
-        height: 330px;
+        // height: 330px;
         background: white;
         // border: 1px solid red;
     }

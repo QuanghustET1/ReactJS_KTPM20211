@@ -39,41 +39,50 @@ class OutStandingDoctor extends Component {
             dots: false,
             infinite: false,
             speed: 500,
-            slidesToShow: 4,
+            slidesToShow: 2,
             slidesToScroll: 1
         }
         return (
+            <div>
+                <section id="doctors" class="doctors">
+                    <div class="container">
+                        <div class="section-title">
+                            <h2>Doctors</h2>
+                            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                        </div>
+                    </div>
             <div className="section-outstanding-doctor section-share">
                 <div className="section-container">
-                    <div className="section-header">
-                        <span className="title-section">Bác sĩ</span>
-                        <button className="btn-section">Xem thêm</button>
-                    </div>
-
-                    <div className="section-body">
-                        <Slider {...this.props.settings}>
+                        <Slider {...settings}>
                             {arrDoctors && arrDoctors.length > 0 && arrDoctors.map((item, index) => {
                                 let imageBase64 = '';
                                 if (item.image) {
                                     imageBase64 = new Buffer(item.image, 'base64').toString('binary');
                                 }
-
-
-
                                 let name = `${item.positionData.valueVi}, ${item.firstName} ${item.lastName}`;
                                 return (
-                                    <div className="section-customize section-outstanding-doctor" key={index} onClick={() => this.handleViewDoctor(item)}>
-                                        <div className="bg-image section-outstanding-doctor" style={{ backgroundImage: `url(${imageBase64})` }} />
-                                        <div className="bg-content text-center">
-                                            <div>{name}</div>
-                                            <div>General</div>
-                                        </div>
+                                    <div class="col-lg-6 doctors" key={index}>
+                                        <div class="member d-flex align-items-start">
+                                            <div class="pic"><img src={imageBase64} class="img-fluid" alt="" onClick={()=>this.handleViewDoctor(item)}/></div>
+                                            <div class="member-info">
+                                                <h4 onClick={()=>this.handleViewDoctor(item)}>{item.firstName} {item.lastName}</h4>
+                                                <span>{item.positionData.valueVi}</span>
+                                                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                                                <div class="social">
+                                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                                    <a href=""><i class="fab fa-facebook"></i></a>
+                                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                                    <a href=""> <i class="fab fa-linkedin"></i> </a>
+                                                </div>
+                                            </div>
+                                         </div>
                                     </div>
                                 )
                             })}
                         </Slider>
                     </div>
                 </div>
+                </section>
             </div>
         );
     }

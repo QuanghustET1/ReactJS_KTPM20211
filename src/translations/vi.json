@@ -60,7 +60,7 @@
         },
         "extra-doctor-infor": {
             "address": "Địa chỉ",
-            "price": "Giá khám",
+            "price": "Giá khám:",
             "detail": "Chi tiết",
             "payment": "Phương thức thanh toán",
             "hide-price": "Ẩn bảng giá"

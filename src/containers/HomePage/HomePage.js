@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import HomeHeader from './HomeHeader';
 import Specialty from './Section/Specialty';
+import HeroSection from './Section/HeroSection';
 // import MedicalFacility from './Section/MedicalFacility';
 import OutStandingDoctor from './Section/OutStandingDoctor';
 import HandBook from './Section/HandBook';
@@ -25,6 +26,7 @@ class HomePage extends Component {
         return (
             <div>
                 <HomeHeader isShowBanner={true} />
+                <HeroSection />
                 <Specialty
                     settings={settings}
                 />
@@ -34,10 +36,10 @@ class HomePage extends Component {
                 <OutStandingDoctor
                     settings={settings}
                 />
-                <HandBook
+                {/* <HandBook
                     settings={settings}
-                />
-                <HomeAbout />
+                /> */}
+                {/* <HomeAbout /> */}
                 <Footer />
             </div>
         );

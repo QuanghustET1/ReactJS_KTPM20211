@@ -47,15 +47,12 @@ class DoctorExtraInfor extends Component {
             <div className="doctor-extra-infor-container">
                 <div className="content-up">
                     <div className="text-address">
-                        <FormattedMessage id="patient.extra-doctor-infor.address" />
+                        <FormattedMessage id="patient.extra-doctor-infor.address" />:
+                        <span> </span>
+                        <span>
+                          {extraInfor && extraInfor.nameClinic ? extraInfor.nameClinic : ''}, {extraInfor && extraInfor.addressClinic ? extraInfor.addressClinic : ''}
+                        </span>
                     </div>
-                    <div className="name-clinic">
-                        {extraInfor && extraInfor.nameClinic ? extraInfor.nameClinic : ''}
-                    </div>
-                    <div className="detail-address">
-                        {extraInfor && extraInfor.addressClinic ? extraInfor.addressClinic : ''}
-                    </div>
-
                 </div>
                 <div className="content-down">
                     {isShowDetailDoctorInfor === false &&
@@ -79,7 +76,7 @@ class DoctorExtraInfor extends Component {
                                     suffix={'$'}
                                 />
                             }
-                            <span onClick={() => this.ShowHideDetailInfor(true)}><FormattedMessage id="patient.extra-doctor-infor.detail" /></span>
+                            <button class="price-detail-btn" onClick={() => this.ShowHideDetailInfor(true)}><FormattedMessage id="patient.extra-doctor-infor.detail" /></button>
                         </div>
                     }
                     {isShowDetailDoctorInfor === true &&
@@ -112,12 +109,11 @@ class DoctorExtraInfor extends Component {
                                     </span>
                                 </div>
                                 <div className="note">
-                                    {extraInfor && extraInfor.note ? extraInfor.note : ''}
+                                    {/* {extraInfor && extraInfor.note ? extraInfor.note : ''} */}
                                 </div>
                             </div>
                             <div className="payment">
-                                <FormattedMessage id="patient.extra-doctor-infor.payment" />
-                                {extraInfor && extraInfor.paymentTypeData && language === LANGUAGES.VI ? extraInfor.paymentTypeData.valueVi : ''}
+                                <FormattedMessage id="patient.extra-doctor-infor.payment" />: {extraInfor && extraInfor.paymentTypeData && language === LANGUAGES.VI ? extraInfor.paymentTypeData.valueVi : ''}
                                 {extraInfor && extraInfor.paymentTypeData && language === LANGUAGES.EN ? extraInfor.paymentTypeData.valueEn : ''}
                             </div>
                             <div className="hide-price">
