@@ -1,6 +1,7 @@
 .detail-specialty-container{
+    padding-top: 120px;
     .description-specialty{
-        margin-top: 58px;
+        // margin-top: 58px;
         background-color: white !important;
         padding: 10px;
         h1,
@@ -11,6 +12,7 @@
         }
     }
     .search-sp-doctor{
+        padding-top: 15px;
         select{
             height: 30px;
             padding: 5px 8px;
@@ -30,7 +32,7 @@
     .each-doctor{
         display: flex;
         width: 100%;
-        min-height: 300px;
+        // min-height: 300px;
         margin: 15px 0;
         padding: 10px;
         background-color: #fff;

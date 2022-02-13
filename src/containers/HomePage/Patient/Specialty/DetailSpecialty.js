@@ -102,8 +102,9 @@ class DefaultClass extends Component {
         let { language } = this.props;
 
         return (
+            <div>
+            <HomeHeader />
             <div className="detail-specialty-container">
-                <HomeHeader />
                 <div className="detail-specialty-body">
                     <div className="description-specialty">
                         {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty) &&
@@ -112,7 +113,7 @@ class DefaultClass extends Component {
                             </div>
                         }
                     </div>
-                    <div className="search-sp-doctor">
+                    {/* <div className="search-sp-doctor">
                         <select onChange={(event) => this.handleOnchangeSelect(event)}>
                             {listProvince && listProvince.length > 0 && listProvince.map((item, index) => {
                                 return (
@@ -122,7 +123,7 @@ class DefaultClass extends Component {
                                 )
                             })}
                         </select>
-                    </div>
+                    </div> */}
                     {arrDoctorId && arrDoctorId.length > 0 &&
                         arrDoctorId.map((item, index) => {
                             return (
@@ -155,6 +156,7 @@ class DefaultClass extends Component {
                     }
                 </div>
             </div>
+        </div>
         )
     }
 }

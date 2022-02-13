@@ -1,6 +1,7 @@
 .doctor-schedule-container{
     border-right: 1px solid #ddd;
     height: 100%;
+    font-family: "Open Sans", sans-serif;
     .all-schedule{
         select{
             border-bottom: 1px solid #ddd;
@@ -18,12 +19,14 @@
         }
     }
     .all-available-time{
+        font-family: "Open Sans", sans-serif !important;
         .text-calendar{
             margin: 10px 0;
             color: #333;
             span{
                 text-transform: uppercase;
                 margin-left: 5px;
+                font-weight: 600;
             }
         }
         .time-content{
