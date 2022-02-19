@@ -89,7 +89,7 @@ class Login extends Component {
                     <div className="login-content row">
                         <div className="col-12 text-center login-title">Login</div>
                         <div className="col-12 form-group">
-                            <label>Username: </label>
+                            <label>Email: </label>
                             <input
                                 type="text"
                                 className="form-control login-input"
@@ -101,7 +101,7 @@ class Login extends Component {
 
                         </div>
                         <div className="col-12 form-group">
-                            <label>Password: </label>
+                            <label>Mật khẩu: </label>
                             <div className="login-password">
                                 <input
                                     type={this.state.showPassword ? 'text' : 'password'}
@@ -126,10 +126,10 @@ class Login extends Component {
                             >Login</button>
                         </div>
                         <div className="col-12">
-                            <span className="forgot-password">Forgot your password?</span>
+                            <span className="forgot-password">Quên mật khẩu?</span>
                         </div>
                         <div className="col-12 text-center login-with mt-3">
-                            <span className="">Or login with:</span>
+                            <span className="">Hoặc đăng nhập với:</span>
                         </div>
                         <div className="col-12 social-login">
                             <i className="fab fa-facebook social-icon fb"></i>
