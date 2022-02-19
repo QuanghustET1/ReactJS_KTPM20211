@@ -47,8 +47,8 @@ class OutStandingDoctor extends Component {
                 <section id="doctors" class="doctors">
                     <div class="container">
                         <div class="section-title">
-                            <h2>Doctors</h2>
-                            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                            <h2>Bác sĩ</h2>
+                            <p></p>
                         </div>
                     </div>
             <div className="section-outstanding-doctor section-share">
@@ -67,7 +67,7 @@ class OutStandingDoctor extends Component {
                                             <div class="member-info">
                                                 <h4 onClick={()=>this.handleViewDoctor(item)}>{item.firstName} {item.lastName}</h4>
                                                 <span>{item.positionData.valueVi}</span>
-                                                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                                                <p></p>
                                                 <div class="social">
                                                     <a href=""><i class="fab fa-twitter"></i></a>
                                                     <a href=""><i class="fab fa-facebook"></i></a>

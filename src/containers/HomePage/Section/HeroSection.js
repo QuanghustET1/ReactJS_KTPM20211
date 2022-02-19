@@ -5,9 +5,9 @@ const HeroSection = () => (
     <div>
         <section id="hero" class="d-flex align-items-center">
             <div class="container">
-            <h1>Welcome to Medilab</h1>
-            <h2>We are team of talented designers making websites with Bootstrap</h2>
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <h1>Booking Clinic</h1>
+            <h2>Nơi sức khỏe của bạn được nâng niu và chăm sóc cẩn thận</h2>
+            <a href="#about" class="btn-get-started scrollto">Tìm bác sĩ ngay!</a>
             </div>
         </section>
 
@@ -17,13 +17,12 @@ const HeroSection = () => (
                 <div class="row">
                 <div class="col-lg-4 d-flex align-items-stretch">
                     <div class="content">
-                    <h3>Why Choose Medilab?</h3>
+                    <h3>Tại sao bạn chọn Booking Clinic?</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                        Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+                        Phòng khám với đội ngũ y, bác sĩ có nhiều năm kinh nghiệm trong nghề. Bạn sẽ dễ dàng chọn lịch khám thích hợp với những bác sĩ tốt nhất!
                     </p>
                     <div class="text-center">
-                        <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                        <a href="#" class="more-btn">Tìm hiểu thêm<i class="bx bx-chevron-right"></i></a>
                     </div>
                     </div>
                 </div>
@@ -33,22 +32,22 @@ const HeroSection = () => (
                         <div class="col-xl-4 d-flex align-items-stretch">
                         <div class="icon-box mt-4 mt-xl-0">
                             <i class="fas fa-file-alt"></i>
-                            <h4>Corporis voluptates sit</h4>
-                            <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                            <h4>Đặt lịch dễ dàng</h4>
+                            <p>Với lịch khám của bác sĩ được hiển thị cụ thể, bạn sẽ dễ  dàng đặt lịch như mình mong muốn.</p>
                         </div>
                         </div>
                         <div class="col-xl-4 d-flex align-items-stretch">
                         <div class="icon-box mt-4 mt-xl-0">
                             <i class="fas fa-cube"></i> 
-                            <h4>Ullamco laboris ladore pan</h4>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                            <h4>Dịch vụ tận tình</h4>
+                            <p>Chúng tôi cam kết mang đến cho khách hàng những trải nghiệm tốt nhất tại phòng khám.</p>
                         </div>
                         </div>
                         <div class="col-xl-4 d-flex align-items-stretch">
                         <div class="icon-box mt-4 mt-xl-0">
                             <i class="far fa-images"></i>   
-                            <h4>Labore consequatur</h4>
-                            <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                            <h4>Khuyến mãi</h4>
+                            <p>Những khách hàng khám lại sẽ được giảm 10% hóa đơn cùng những ưu đãi vô cùng hấp dẫn.</p>
                         </div>
                         </div>
                     </div>
@@ -65,29 +64,29 @@ const HeroSection = () => (
                 <div class="col-lg-3 col-md-6">
                     <div class="count-box">
                     <i class="fas fa-user-md"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter">10</span>
-                    <p>Doctors</p>
+                    <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter">5</span>
+                    <p>Bác sĩ</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
                     <div class="count-box">
                     <i class="far fa-hospital"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter">20</span>
-                    <p>Departments</p>
+                    <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter">4</span>
+                    <p>Chuyên khoa</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                     <div class="count-box">
                     <i class="fas fa-flask"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter">15</span>
-                    <p>Research Labs</p>
+                    <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter">3</span>
+                    <p>Đối tác</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                     <div class="count-box">
                     <i class="fas fa-trophy"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter">14</span>
-                    <p>Awards</p>
+                    <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter">6</span>
+                    <p>Giải thưởng</p>
                     </div>
                 </div>
                 </div>

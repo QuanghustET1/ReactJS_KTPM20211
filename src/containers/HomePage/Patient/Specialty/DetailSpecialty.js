@@ -8,6 +8,7 @@ import DoctorEtraInfor from "../Doctor/DoctorEtraInfor";
 import ProfileDoctor from '../Doctor/ProfileDoctor';
 import { getDetailSpecialtyById, getAllcodeService } from '../../../../services/userService';
 import _ from 'lodash';
+import Footer from '../../Section/Footer'
 import { LANGUAGES } from '../../../../utils';
 
 class DefaultClass extends Component {
@@ -156,6 +157,7 @@ class DefaultClass extends Component {
                     }
                 </div>
             </div>
+            <Footer/>
         </div>
         )
     }
