@@ -295,18 +295,18 @@ class ManageDoctor extends Component {
                             name="selectedProvince"
                         />
                     </div>
-                    <div className="col-4 form-group">
+                    {/* <div className="col-4 form-group">
                         <label><FormattedMessage id="admin.manage-doctor.nameClinic" /></label>
                         <input className="form-control" onChange={(event) => { this.handleOnchangeText(event, 'nameClinic') }} value={this.state.nameClinic} />
                     </div>
                     <div className="col-4 form-group">
                         <label><FormattedMessage id="admin.manage-doctor.addressClinic" /></label>
                         <input className="form-control" onChange={(event) => { this.handleOnchangeText(event, 'addressClinic') }} value={this.state.addressClinic} />
-                    </div>
-                    <div className="col-4 form-group">
+                    </div> */}
+                    {/* <div className="col-4 form-group">
                         <label><FormattedMessage id="admin.manage-doctor.note" /></label>
                         <input className="form-control" onChange={(event) => { this.handleOnchangeText(event, 'note') }} value={this.state.note} />
-                    </div>
+                    </div> */}
                 </div>
                 <div className="row">
                     <div className="col-4 form-group">
@@ -319,7 +319,7 @@ class ManageDoctor extends Component {
                             name="selectedSpecialty"
                         />
                     </div>
-                    <div className="col-4 form-group">
+                    {/* <div className="col-4 form-group">
                         <label><FormattedMessage id="admin.manage-doctor.select-clinic" /></label>
                         <Select
                             value={this.state.selectedClinic}
@@ -328,7 +328,7 @@ class ManageDoctor extends Component {
                             onChange={this.handleChangeSelectDoctorInfor}
                             name="selectedClinic"
                         />
-                    </div>
+                    </div> */}
                 </div>
                 <div className="manage-doctor-editer">
                     <MdEditor style={{ height: '300px' }} renderHTML={text => mdParser.render(text)} onChange={this.handleEditorChange} value={this.state.contentMarkdown} />
