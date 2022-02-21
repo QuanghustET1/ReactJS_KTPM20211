@@ -23,11 +23,11 @@
     },
     "menu": {
         "admin": {
-            "manage-user": "Người dùng",
-            "manage-doctor": "Quản lý bác sĩ",
+            "manage-user": "Quản lý",
+            "manage-doctor": "Quản lý thông tin bác sĩ",
             "manage-admin": "Quản lý admin",
             "crud": "CRUD user",
-            "crud-redux": "CRUD redux",
+            "crud-redux": "Quản lý tài khoản",
             "clinic": "Phòng khám",
             "manage-clinic": "Quản lý phòng khám",
             "specialty": "Chuyên khoa",
