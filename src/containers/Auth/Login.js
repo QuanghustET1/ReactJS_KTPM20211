@@ -87,7 +87,7 @@ class Login extends Component {
             <div className="login-background">
                 <div className="login-container">
                     <div className="login-content row">
-                        <div className="col-12 text-center login-title">Login</div>
+                        <div className="col-12 text-center login-title">Đăng nhập </div>
                         <div className="col-12 form-group">
                             <label>Email: </label>
                             <input
