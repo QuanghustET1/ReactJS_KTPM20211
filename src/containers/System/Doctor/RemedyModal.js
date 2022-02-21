@@ -58,7 +58,7 @@ class DefaultClass extends Component {
                 centered
             >
                 <div className="modal-header">
-                    <h5 className="modal-title">Gửi hóa đơn khám bệnh thành công</h5>
+                    <h5 className="modal-title">Gửi phản hồi xác nhận đặt lịch thành công</h5>
                     <button type="button" className="close" aria-label="Close" onClick={closeRemedyModal}>
                         <span aria-hidden="true">x</span>
                     </button>
@@ -72,7 +72,7 @@ class DefaultClass extends Component {
                             />
                         </div>
                         <div className="col-6 form-group">
-                            <label>Chọn file đơn thuốc</label>
+                            <label>Chọn file thông tin chi tiết về lịch khám</label>
                             <input className="form-control-file" type="file"
                                 onChange={(event) => this.handleOnChangeImage(event)}
                             />
